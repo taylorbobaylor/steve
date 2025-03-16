@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';

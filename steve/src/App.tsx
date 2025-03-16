@@ -8,22 +8,13 @@ import {
   Scissors as Saw, 
   Paintbrush as PaintBucket, 
   Menu, 
-  X,
-  Star,
-  Phone,
-  Mail,
-  MapPin,
-  Clock
+  X
 } from 'lucide-react';
 import { HomeSection } from './components/sections/HomeSection';
 import { ServicesSection } from './components/sections/ServicesSection';
 import { AboutSection } from './components/sections/AboutSection';
 import { BookingSection } from './components/sections/BookingSection';
 import { ContactSection } from './components/sections/ContactSection';
-import { Calendar } from './components/Calendar';
-import { Button } from './components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import './App.css';
 
 // Define types for our data
