@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Animation keyframes */
+@keyframes hammer {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-30deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-30deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-hammer {
+  animation: hammer 2s infinite;
+  transform-origin: 90% 90%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d97706;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+}
