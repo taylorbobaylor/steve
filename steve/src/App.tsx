@@ -49,32 +49,32 @@ function App() {
     { 
       title: 'Carpentry', 
       icon: <Saw className="h-10 w-10 text-amber-600" />,
-      description: 'Custom decks, cabinets, shelving, and furniture. Quality craftsmanship for all your woodworking needs.'
+      description: 'Expert custom deck construction, built-in cabinetry, custom shelving solutions, and handcrafted furniture. Our skilled carpenters use premium materials and precision techniques for durable, beautiful results. From pergolas and gazebos to crown molding and trim work, we deliver quality craftsmanship for all your woodworking needs.'
     },
     { 
       title: 'Plumbing', 
       icon: <Wrench className="h-10 w-10 text-blue-600" />,
-      description: 'Fixture installation, pipe repairs, drain cleaning, and more. Fast, reliable service for all plumbing issues.'
+      description: 'Comprehensive plumbing services including fixture installation, pipe repairs, drain cleaning, water heater replacement, and leak detection. Our licensed plumbers handle everything from emergency repairs to bathroom renovations with fast, reliable service. We use industry-leading techniques and materials to ensure long-lasting solutions for all plumbing issues.'
     },
     { 
       title: 'Electrical', 
       icon: <Drill className="h-10 w-10 text-yellow-500" />,
-      description: 'Lighting installation, outlet repairs, ceiling fans, and electrical troubleshooting. Safe and code-compliant work.'
+      description: 'Professional electrical services including lighting installation, outlet repairs, ceiling fan mounting, panel upgrades, and whole-house rewiring. Our certified electricians ensure all work is safe and code-compliant. We specialize in troubleshooting complex electrical issues, smart home wiring, and energy-efficient lighting solutions to improve your home\'s functionality and safety.'
     },
     { 
       title: 'Painting', 
       icon: <PaintBucket className="h-10 w-10 text-red-500" />,
-      description: 'Interior and exterior painting, staining, and finishing. Transform your space with a fresh coat of color.'
+      description: 'Premium interior and exterior painting services using high-quality paints and expert techniques. Our professional painters provide color consultation, surface preparation, precision application, and thorough cleanup. We handle walls, ceilings, trim, cabinets, decks, and siding with meticulous attention to detail. Transform your space with a fresh coat of color backed by our satisfaction guarantee.'
     },
     { 
       title: 'Home Repairs', 
       icon: <Hammer className="h-10 w-10 text-gray-700" />,
-      description: 'Drywall repair, door installation, window replacement, and general maintenance. No job too small!'
+      description: 'Comprehensive home repair services including drywall patching, door installation, window replacement, floor repair, tile work, and general maintenance. Our skilled technicians can fix squeaky floors, stuck windows, damaged trim, and more. We pride ourselves on prompt service, quality workmanship, and attention to detail. No job is too small—we\'re here to handle all your home repair needs.'
     },
     { 
       title: 'Remodeling', 
       icon: <Ruler className="h-10 w-10 text-green-600" />,
-      description: 'Kitchen and bathroom renovations, basement finishing, and home additions. Complete transformation services.'
+      description: 'Full-service remodeling for kitchens, bathrooms, basements, and home additions. Our experienced team handles every aspect from design and permitting to construction and finishing touches. We coordinate all trades, manage timelines, and ensure quality control throughout your project. Transform your living spaces with our comprehensive renovation services tailored to your style, budget, and timeline.'
     }
   ];
 
@@ -103,7 +103,7 @@ function App() {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Hammer className="h-6 w-6" />
-            <span className="text-xl font-bold">Steve's Handyman Services</span>
+            <span className="text-xl font-bold">Moonridge Handyman Services</span>
           </div>
           
           {/* Desktop Navigation */}

@@ -35,7 +35,7 @@ export function HomeSection({ animationStep, services, testimonials, setActiveSe
               Quality Craftsmanship You Can Trust
             </h1>
             <p className="text-lg text-gray-700">
-              From deck building to home repairs, Steve delivers professional handyman services with attention to detail and dedication to quality.
+              From deck building to home repairs, Moonridge delivers professional handyman services with attention to detail and dedication to quality.
             </p>
             <div className="flex space-x-4">
               <Button 
@@ -252,7 +252,7 @@ export function HomeSection({ animationStep, services, testimonials, setActiveSe
       <section className="text-center p-8 bg-amber-700 text-white rounded-lg">
         <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
         <p className="mb-6 max-w-2xl mx-auto">
-          Book your appointment today and experience the quality craftsmanship that Steve's Handyman Services is known for.
+          Book your appointment today and experience the quality craftsmanship that Moonridge Handyman Services is known for.
         </p>
         <Button 
           onClick={() => setActiveSection('booking')}

@@ -162,7 +162,7 @@ export function Calendar({ initialService }: CalendarProps = {}) {
             </span>
           </p>
           <p className="text-sm text-gray-500">
-            Steve will contact you shortly to confirm the details.
+            Moonridge will contact you shortly to confirm the details.
           </p>
           <Button 
             className="mt-4 bg-amber-600 hover:bg-amber-700"

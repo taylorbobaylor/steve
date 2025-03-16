@@ -18,7 +18,7 @@ export function AboutSection({ testimonials }: AboutSectionProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h1 className="text-4xl font-bold text-amber-800 mb-8 text-center">About Steve</h1>
+      <h1 className="text-4xl font-bold text-amber-800 mb-8 text-center">About Moonridge</h1>
       
       <div className="flex flex-col md:flex-row gap-8 mb-12">
         <div className="md:w-1/2">
@@ -44,15 +44,15 @@ export function AboutSection({ testimonials }: AboutSectionProps) {
         </div>
         
         <div className="md:w-1/2 space-y-4">
-          <h2 className="text-2xl font-bold text-amber-700">Meet Your Handyman</h2>
+          <h2 className="text-2xl font-bold text-amber-700">Meet Your Handyman Team</h2>
           <p className="text-gray-600">
-            With over 15 years of experience in home improvement and repairs, Steve has built a reputation for quality craftsmanship and reliable service in the community.
+            With over 15 years of experience in home improvement and repairs, Moonridge has built a reputation for quality craftsmanship and reliable service in the community.
           </p>
           <p className="text-gray-600">
-            Steve's journey began as an apprentice carpenter, where he honed his woodworking skills before expanding his expertise to include plumbing, electrical work, and general home repairs.
+            Moonridge's journey began with a passion for carpentry, before expanding our expertise to include plumbing, electrical work, painting, and comprehensive home repairs and renovations.
           </p>
           <p className="text-gray-600">
-            What sets Steve apart is his attention to detail and commitment to customer satisfaction. He takes pride in every project, whether it's building a custom deck or fixing a leaky faucet.
+            What sets Moonridge apart is our attention to detail and commitment to customer satisfaction. Our team takes pride in every project, whether it's building a custom deck or fixing a leaky faucet.
           </p>
           <div className="pt-4">
             <h3 className="font-bold text-amber-700">Certifications:</h3>

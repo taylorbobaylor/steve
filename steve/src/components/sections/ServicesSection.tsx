@@ -21,8 +21,8 @@ export function ServicesSection({ services, setActiveSection }: ServicesSectionP
     >
       <h1 className="text-4xl font-bold text-amber-800 mb-8 text-center">Our Services</h1>
       <p className="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">
-        Steve's Handyman Services offers a wide range of professional home improvement and repair services. 
-        No job is too big or too small!
+        Moonridge Handyman Services offers a wide range of professional home improvement and repair services.
+        Our skilled team delivers quality craftsmanship for projects of any size. No job is too big or too small!
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -57,8 +57,8 @@ export function ServicesSection({ services, setActiveSection }: ServicesSectionP
       <div className="mt-16 bg-amber-50 p-8 rounded-lg">
         <h2 className="text-2xl font-bold text-amber-800 mb-4">Custom Projects</h2>
         <p className="text-gray-600 mb-6">
-          Don't see exactly what you need? Steve specializes in custom projects tailored to your specific requirements.
-          Contact us to discuss your unique project ideas.
+          Don't see exactly what you need? Moonridge specializes in custom projects tailored to your specific requirements.
+          Contact us to discuss your unique project ideas and let our experienced team bring your vision to life.
         </p>
         <Button 
           onClick={() => setActiveSection('contact')}

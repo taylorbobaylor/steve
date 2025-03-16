@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Button } from '../ui/button';
@@ -31,7 +30,7 @@ export function ContactSection() {
                 <Mail className="h-5 w-5 text-amber-600 mt-1" />
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-gray-600">steve@handymanservices.com</p>
+                  <p className="text-gray-600">info@moonridgehandyman.com</p>
                   <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
                 </div>
               </div>

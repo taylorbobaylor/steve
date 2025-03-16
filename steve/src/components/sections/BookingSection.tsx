@@ -25,7 +25,7 @@ export function BookingSection() {
               <CardHeader>
                 <CardTitle>Select an Available Date</CardTitle>
                 <CardDescription>
-                  Steve is available on the highlighted dates. Click to select a time slot.
+                  Moonridge is available on the highlighted dates. Click to select a time slot.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -39,7 +39,7 @@ export function BookingSection() {
               <CardHeader>
                 <CardTitle>Request an Appointment</CardTitle>
                 <CardDescription>
-                  Fill out the form below and Steve will contact you to confirm your appointment.
+                  Fill out the form below and Moonridge will contact you to confirm your appointment.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -121,7 +121,7 @@ export function BookingSection() {
                   <Button 
                     type="button"
                     className="w-full bg-amber-600 hover:bg-amber-700"
-                    onClick={() => alert('Form submitted! Steve will contact you shortly to confirm your appointment.')}
+                    onClick={() => alert('Form submitted! Moonridge will contact you shortly to confirm your appointment.')}
                   >
                     Submit Request
                   </Button>
