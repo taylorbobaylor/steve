@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar } from '../Calendar';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';

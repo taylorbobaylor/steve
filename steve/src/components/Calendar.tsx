@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
-import { Calendar as CalendarIcon, Clock } from 'lucide-react';
+import { Calendar as CalendarIcon, Clock, Wrench, Clock3 } from 'lucide-react';
 
 // Mock data for available time slots
 const AVAILABLE_DATES = [
@@ -19,10 +19,26 @@ const TIME_SLOTS = [
   '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'
 ];
 
-export function Calendar() {
+// Service types with estimated durations
+const SERVICES = [
+  { id: 'carpentry', name: 'Carpentry', duration: 2, icon: <Wrench className="h-5 w-5 text-amber-600" /> },
+  { id: 'plumbing', name: 'Plumbing', duration: 1, icon: <Wrench className="h-5 w-5 text-amber-600" /> },
+  { id: 'electrical', name: 'Electrical', duration: 1, icon: <Wrench className="h-5 w-5 text-amber-600" /> },
+  { id: 'painting', name: 'Painting', duration: 3, icon: <Wrench className="h-5 w-5 text-amber-600" /> },
+  { id: 'repairs', name: 'Home Repairs', duration: 2, icon: <Wrench className="h-5 w-5 text-amber-600" /> },
+  { id: 'remodeling', name: 'Remodeling', duration: 4, icon: <Wrench className="h-5 w-5 text-amber-600" /> },
+];
+
+interface CalendarProps {
+  initialService?: string;
+}
+
+export function Calendar({ initialService }: CalendarProps = {}) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [selectedService, setSelectedService] = useState<string | null>(initialService || null);
+  const [selectedDuration, setSelectedDuration] = useState<number>(1);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
   
   // Get days in month
@@ -53,9 +69,18 @@ export function Calendar() {
   };
   
   const handleBooking = () => {
-    if (selectedDate && selectedTime) {
+    if (selectedDate && selectedTime && selectedService) {
       setBookingConfirmed(true);
     }
+  };
+  
+  const getAvailableTimeSlots = () => {
+    // In a real app, this would filter based on service duration and existing bookings
+    // For now, we'll just simulate fewer slots for longer duration services
+    if (selectedDuration >= 3) {
+      return TIME_SLOTS.filter((_, index) => index % 2 === 0); // Every other slot for long jobs
+    }
+    return TIME_SLOTS;
   };
   
   const renderCalendar = () => {
@@ -127,6 +152,14 @@ export function Calendar() {
             </span>
             <br />
             <span className="font-semibold">at {selectedTime}</span>
+            <br />
+            <span className="font-semibold">
+              Service: {SERVICES.find(s => s.id === selectedService)?.name}
+            </span>
+            <br />
+            <span className="font-semibold">
+              Estimated Duration: {selectedDuration} {selectedDuration === 1 ? 'hour' : 'hours'}
+            </span>
           </p>
           <p className="text-sm text-gray-500">
             Steve will contact you shortly to confirm the details.
@@ -140,12 +173,44 @@ export function Calendar() {
         </motion.div>
       ) : (
         <>
-          <div className="flex justify-between items-center">
-            <Button variant="outline" onClick={prevMonth}>&lt;</Button>
-            <h2 className="text-xl font-semibold">
-              {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-            </h2>
-            <Button variant="outline" onClick={nextMonth}>&gt;</Button>
+          <div className="space-y-6">
+            <div className="bg-amber-50 p-4 rounded-lg">
+              <h3 className="text-lg font-semibold mb-3 flex items-center">
+                <Wrench className="mr-2 h-5 w-5 text-amber-600" />
+                Select Service
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                {SERVICES.map(service => (
+                  <div
+                    key={service.id}
+                    className={`p-3 border rounded-md cursor-pointer transition-colors
+                      ${selectedService === service.id ? 'bg-amber-600 text-white border-amber-600' : 'hover:bg-amber-50 border-gray-200'}
+                    `}
+                    onClick={() => {
+                      setSelectedService(service.id);
+                      setSelectedDuration(service.duration);
+                    }}
+                  >
+                    <div className="flex items-center">
+                      {service.icon}
+                      <span className="ml-2">{service.name}</span>
+                    </div>
+                    <div className="text-xs mt-1 flex items-center">
+                      <Clock3 className="h-3 w-3 mr-1" />
+                      {service.duration} {service.duration === 1 ? 'hour' : 'hours'}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex justify-between items-center">
+              <Button variant="outline" onClick={prevMonth}>&lt;</Button>
+              <h2 className="text-xl font-semibold">
+                {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+              </h2>
+              <Button variant="outline" onClick={nextMonth}>&gt;</Button>
+            </div>
           </div>
           
           <div className="grid grid-cols-7 gap-1 text-center">
@@ -166,29 +231,35 @@ export function Calendar() {
                 Available Times for {selectedDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                {TIME_SLOTS.map(time => (
-                  <div
-                    key={time}
-                    className={`p-2 border rounded-md text-center cursor-pointer transition-colors
-                      ${selectedTime === time ? 'bg-amber-600 text-white border-amber-600' : 'hover:bg-amber-50 border-gray-200'}
-                    `}
-                    onClick={() => handleTimeClick(time)}
-                  >
-                    <div className="flex items-center justify-center">
-                      <Clock className="h-4 w-4 mr-1" />
-                      {time}
+                {selectedService ? (
+                  getAvailableTimeSlots().map(time => (
+                    <div
+                      key={time}
+                      className={`p-2 border rounded-md text-center cursor-pointer transition-colors
+                        ${selectedTime === time ? 'bg-amber-600 text-white border-amber-600' : 'hover:bg-amber-50 border-gray-200'}
+                      `}
+                      onClick={() => handleTimeClick(time)}
+                    >
+                      <div className="flex items-center justify-center">
+                        <Clock className="h-4 w-4 mr-1" />
+                        {time}
+                      </div>
                     </div>
+                  ))
+                ) : (
+                  <div className="col-span-full text-center p-4 text-amber-600">
+                    Please select a service first to see available time slots
                   </div>
-                ))}
+                )}
               </div>
               
               <div className="mt-6">
                 <Button
                   className="w-full bg-amber-600 hover:bg-amber-700"
-                  disabled={!selectedTime}
+                  disabled={!selectedTime || !selectedService}
                   onClick={handleBooking}
                 >
-                  Book Appointment
+                  Book Appointment for {selectedDuration} {selectedDuration === 1 ? 'hour' : 'hours'}
                 </Button>
               </div>
             </motion.div>
